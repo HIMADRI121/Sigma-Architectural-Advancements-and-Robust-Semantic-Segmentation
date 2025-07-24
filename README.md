@@ -4,6 +4,10 @@ This repository contains the architectural changes for the paper Sigma: Siamese 
 
 <img width="1029" height="378" alt="image" src="https://github.com/user-attachments/assets/dcc2dd62-7411-41f6-9705-e7eed80bc464" />
 
+
+## Doc file for the reference of the architectural changes
+[📄 Download Project Report (pdf)](https://drive.google.com/file/d/1WE5UM3wU9klsYPnVTsYAAsIydWx2EAFx/view?usp=sharing)
+
 ## 🔧 Environment Setup
 
 We tested our codebase with:
