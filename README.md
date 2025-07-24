@@ -28,8 +28,10 @@ pip install -r requirements.txt
 cd models/encoders/selective_scan
 pip install .
 cd ../../..
-
-We use MFnet datasets, including both RGB-Thermal and RGB-Depth datasets.
+```
+## Dataset 
+```bash
+We use MFNet datasets, including both RGB-Thermal and RGB-Depth datasets.
 
 Usage
 Training
@@ -54,10 +56,10 @@ You can also use single-GPU training:
 
 CUDA_VISIBLE_DEVICES="0,1,2,3,4,5,6,7" torchrun -m --nproc_per_node=1 train.py -p 29501 -d 0 -n "dataset_name" 
 Results will be saved in log_final folder.
-
-Evaluation
+```
+## Evaluation
 Run the evaluation by:
-
+```bash
 CUDA_VISIBLE_DEVICES="0,1,2,3,4,5,6,7" python eval.py -d="0" -n "dataset_name" -e="epoch_number" -p="visualize_savedir"
 Here, dataset_name=mfnet/pst/nyu/sun, referring to the four datasets.
 epoch_number refers to a number standing for the epoch number you want to evaluate with. You can also use a .pth checkpoint path directly for epoch_number to test for a specific weight.
@@ -66,13 +68,15 @@ If you want to use multi GPUs please specify multiple Device IDs:
 
 CUDA_VISIBLE_DEVICES="0,1,2,3,4,5,6,7" python eval.py -d="0,1,2,3,4,5,6,7" -n "dataset_name" -e="epoch_number" -p="visualize_savedir"
 Results will be saved in log_final folder.
+```
 
-📈Results
+## Results
 Perfectly obtained the results on the original paper. And done various chnages in architecture for obtaining the hidden information and geeting some novality in the tasks we performed.
-We provide our trained weights on the four datasets:
-
+We provide our trained weights on MFNet dataset:
+```bash
 MFNet (9 categories)
 Architecture	Backbone	mIOU	Weight
 Sigma	VMamba-T	60.2%	Sigma-T-MFNet
 Sigma	VMamba-S	61.1%	Sigma-S-MFNet
 Sigma	VMamba-B	61.3%	Sigma-B-MFNet
+```
