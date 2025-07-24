@@ -4,21 +4,30 @@ This repository contains the architectural changes for the paper Sigma: Siamese 
 
 <img width="1029" height="378" alt="image" src="https://github.com/user-attachments/assets/dcc2dd62-7411-41f6-9705-e7eed80bc464" />
 
-Environment
-We test our codebase with PyTorch 1.13.1 + CUDA 11.7 as well as PyTorch 2.2.1 + CUDA 12.1. Please install corresponding PyTorch and CUDA versions according to your computational resources. We showcase the environment creating process with PyTorch 1.13.1 as follows.
+## 🔧 Environment Setup
 
-Create environment.
+We tested our codebase with:
 
+- **PyTorch 1.13.1 + CUDA 11.7**  
+- **PyTorch 2.2.1 + CUDA 12.1**
+
+Please install the corresponding versions based on your system. Below is the setup for **PyTorch 1.13.1**:
+
+```bash
+# Create and activate conda environment
 conda create -n sigma python=3.9
 conda activate sigma
-Install all dependencies. Install pytorch, cuda and cudnn, then install other dependencies via:
 
+# Install PyTorch and CUDA
 pip install torch==1.13.1+cu117 torchvision==0.14.1+cu117 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu117
+
+# Install other dependencies
 pip install -r requirements.txt
-Install Mamba
 
-cd models/encoders/selective_scan && pip install . && cd ../../..
-
+# Install Mamba (for selective scan module)
+cd models/encoders/selective_scan
+pip install .
+cd ../../..
 
 We use MFnet datasets, including both RGB-Thermal and RGB-Depth datasets.
 
